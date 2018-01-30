@@ -2,6 +2,8 @@
 <html>
 
 <head>
+<meta name="google-signin-scope" content="profile email">
+<meta name="google-signin-client_id" content="125723795284-5q49pulldpuol04tvtjodt130qkusb7g.apps.googleusercontent.com">
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Orbitron" />
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Andika" />
 <link rel="stylesheet" type="text/css" href="./css/main.css" />
@@ -15,9 +17,16 @@
 <p>Isn't one of the biggest issue everyday is what to eat .. Well, problem solved !</p>
 <p>We are here to help you out in deciding what to cook and eat today.</p>
 
-<div id="main-area"></div>
+</br></br></br>
+
+<div id="main-area" class="container">	
+</div>
+
+</br></br></br>
+<div class="g-signin2" data-onsuccess="Main.onSignIn" data-theme="dark"></div>
 
 
+<script src="https://apis.google.com/js/platform.js" async defer></script>
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script src="./js/main.js"></script>
