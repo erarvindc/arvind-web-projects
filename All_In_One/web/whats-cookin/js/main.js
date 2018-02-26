@@ -4,20 +4,14 @@ var Main = {
 	initialize: function () {
 		console.log('In the initilize function...');
 		
-		setTimeout(function(){ 
-
-			$('#main-area').html(
-					
-					'<h3>This is the Main area for site content.</h3>'// +
-					//'<div class="g-signin2" data-onsuccess="Main.onSignIn" data-theme="dark"></div>'
-			);
-			
-		}, 1000 );
+		setTimeout(function(){ 	
+            $('#main-area').html(					
+                '<h3>This is the Main area for site content.</h3>'            
+            );
+		}, 1000 );                
 		
-		
-		
-	},
-	onSignIn: function(googleUser) {
+    },
+    onSignIn: function(googleUser) {
         // Useful data for your client-side scripts:
         var profile = googleUser.getBasicProfile();
         console.log("ID: " + profile.getId()); // Don't send this directly to your server!
