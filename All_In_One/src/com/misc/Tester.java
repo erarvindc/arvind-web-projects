@@ -6,23 +6,35 @@ public class Tester {
 		// TODO Auto-generated method stub
 
 		
-		fibonacciSeries( 0, 10 );
+		String output = fibonacciSeries( 0, 10 );
 		
+		System.out.println(  output );
+		
+	
 		
 	}
 
-	public static void fibonacciSeries( int start, int maxLimit ) {
+	public static int addNumbers( int x, int y ) {
+		return x + y;
+	}
+	
+	
+	public static String fibonacciSeries( int start, int maxLimit ) {
 		
+		String out = "";
 		//int counter = 0;
 		int lastNumber = 0;
 		int currentNumber = 1;
 		int output = 0;
-		for ( int counter = 0; counter <= maxLimit; counter++ ) { 
+		for ( int counter = 0; counter < maxLimit; counter++ ) { 
 			output = lastNumber + currentNumber;
 			lastNumber = currentNumber;
 			currentNumber = output;
-			System.out.println( output);
-		}
+			//System.out.println( output);
+			out += output + ", ";
+			
+		}	
+		return out; 
 	}
 	
 }
