@@ -7,16 +7,20 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.arvind.service.LoginService;
+
 @Controller
 public class LoginController {
 	
 	@RequestMapping("/login")
 	public ModelAndView login( HttpServletRequest request, HttpServletResponse response ) {
 		
+		LoginService loginService = new LoginService();
+		
 		String loginResult = "Login failed !";
-		if ( request.getParameter("usrnm").equals("admin") 
-				&& request.getParameter("pwd").equals("password") ) {
-			loginResult = "Login Succesful !";
+		if ( loginService.isLoginSuccessful
+				( request.getParameter("usrnm"), request.getParameter("pwd") ) ) {
+			loginResult = "Login Successful !";
 		}
 		
 		ModelAndView modelview = new ModelAndView();
