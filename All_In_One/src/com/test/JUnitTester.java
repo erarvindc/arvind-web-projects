@@ -6,6 +6,7 @@ import org.junit.runner.JUnitCore;
 import org.junit.runner.Result;
 import org.junit.runner.notification.Failure;
 
+import com.cipher.VigenereCipher;
 import com.misc.Tester;
 
 public class JUnitTester {
@@ -41,5 +42,45 @@ public class JUnitTester {
 		assertEquals( expected, result );
 	}
 
+	@Test
+    public void testVigenereCipherEncrypt() {
 
+		String key = "encrypt";
+		String target = "top secret";
+		
+		VigenereCipher cipher = new VigenereCipher( key );
+		
+		String encrypted = cipher.encrypt( target );
+		System.out.println( encrypted );
+        
+		assertEquals( ">2:IH,//:/", encrypted );		        
+    }
+	
+	@Test
+    public void testVigenereCipherDecrypt() {
+
+		String key = "encrypt";
+		String target = ">2:IH,//:/";
+		
+		VigenereCipher cipher = new VigenereCipher( key );
+		
+		String decrypted = cipher.decrypt( target );
+		System.out.println( decrypted );
+        
+		assertEquals( "top secret", decrypted );				
+    }
+
+	@Test
+    public void testVigenereCipherEncryptDir() {
+
+		String key = "encrypt";
+		String target = "sample_dir";
+		
+		VigenereCipher cipher = new VigenereCipher( key );
+		
+		cipher.encryptDir(target);
+        
+        assertEquals( "", "" );
+    }
+	
 }
